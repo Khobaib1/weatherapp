@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+  
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+*,
+*:after,
+*:before {
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+}
+html { 
+    background: url(https://images.unsplash.com/photo-1560017896-a6bf1e2acfb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+
+.container {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+height: 98vh;
+}
+
+.widget {
+background: -webkit-gradient(linear, left top, right bottom, color-stop(20%, #3cc0fe), to(#0066ff));
+background: linear-gradient(to bottom right, #3cc0fe 20%, #0066ff);
+width: 900px;
+height: 400px;
+border-radius: 6px;
+-webkit-box-shadow: 0px 60px 80px -20px rgba(39, 165, 253, 0.4);
+        box-shadow: 0px 60px 80px -20px rgba(39, 165, 253, 0.4);
+position: relative;
+overflow: hidden;
+top: -65px;
+}
+
+.pictoBackdrop {
+position: absolute;
+height: 560px;
+width: 560px;
+border-radius: 50%;
+background: linear-gradient(160deg, rgba(60, 192, 254, 0.7) 40%, rgba(0, 102, 255, 0.6));
+right: -40px;
+top: -90px;
+}
+
+.pictoFrame {
+position: absolute;
+background: #34373e;
+border-radius: 50%;
+-webkit-box-shadow: 0px 50px 60px -20px #0066ff;
+        box-shadow: 0px 50px 60px -20px #0066ff;
+height: 336px;
+width: 336px;
+right: 80px;
+top: 25px;
+}
+
+.pictoCloudBig {
+position: absolute;
+border-radius: 50%;
+background: #aacbe6;
+-webkit-box-shadow: 20px 20px 80px -20px #aacbe6;
+        box-shadow: 20px 20px 80px -20px #aacbe6;
+height: 218.4px;
+width: 218.4px;
+top: 80px;
+right: 160px;
+}
+
+.pictoCloudFill {
+position: absolute;
+background: #aacbe6;
+-webkit-box-shadow: 0px 20px 80px -20px #aacbe6;
+        box-shadow: 0px 20px 80px -20px #aacbe6;
+height: 107.016px;
+width: 107.016px;
+top: 191px;
+right: 265px;
+}
+
+.pictoCloudSmall {
+position: absolute;
+border-radius: 50%;
+background: #d2e9fa;
+height: 152.88px;
+width: 152.88px;
+top: 146px;
+right: 282px;
+}
+
+.iconCloudBig {
+position: absolute;
+border-radius: 50%;
+background: #9cd0ff;
+height: 36px;
+width: 36px;
+top: 200px;
+left: 80px;
+}
+
+.iconCloudSmall {
+position: absolute;
+border-radius: 50%;
+height: 23.4px;
+width: 23.4px;
+background: #d2e9fa;
+top: 213px;
+left: 70px;
+}
+
+.iconCloudFill {
+position: absolute;
+height: 16.38px;
+width: 16.38px;
+background: #9cd0ff;
+top: 220px;
+left: 80px;
+}
+
+.details {
+font-family: Roboto, sans-serif;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
+margin-top: 30px;
+margin-left: 60px;
+}
+
+.temperature {
+color: white;
+font-weight: 300;
+font-size: 10em;
+}
+
+.summary {
+color: #d2e9fa;
+font-size: 2em;
+font-weight: 300;
+width: 260px;
+margin-top: -16px;
+padding-bottom: 16px;
+border-bottom: 2px solid #9cd0ff;
+margin-left: 8px;
+}
+
+.summaryText {
+margin: 0;
+margin-left: 56px;
+}
+
+.precipitation, .wind {
+color: #d2e9fa;
+font-size: 1.6em;
+font-weight: 300;
+margin-left: 8px;
+}
+
+.precipitation {
+margin-top: 16px;
+}
+
+.wind {
+margin-top: 4px;
+}
+
+h1{
+    color: rgba(4, 12, 2, 0.733);
+
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 18px rgb(5, 137, 189);
+    text-align: center;
+   font-family: 'Open Sans', sans-serif;
+     /* display: none; */
+}
+form{
+    /* background-color: rgb(168, 21, 21); */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* width: 250px; */
+    /* height: px; */
+    gap: 9px;
+}
+
+#city{
+    background-color: rgb(44, 187, 243);
+    color: rgb(31, 88, 18);
+    width: 250px;
+    height: 45px;
+    border-radius: 5%;
+    
+    font-size: xx-large;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid rgb(52, 188, 241);
+
+    
+}
+#submit{
+  
+    background-color: rgb(22, 177, 238);
+    color: aqua;
+    border: 1px solid rgb(22, 177, 238);
+    font-weight: bold;
+    font-size: large;
+    width: 100px;
+    height: 49px;
+    border-radius: 10%;
+}
+#submit:hover{
+    background-color: rgb(10, 118, 161);
+    color:  rgb(60, 255, 76);
+}
+#city:active{
+    background-color: rgb(22, 177, 238);
+    border: 1px solid rgb(22, 177, 238);
+}
+h3{
+    text-align: center;
+     color: rgb(60, 255, 76); 
+     border: 7px solid hsl(201, 16%, 64%); 
+     width: 110px;  
+     /* padding-left: 0px; */
+     margin: 0px;
+     box-sizing: border-box;
+     border-radius: 5px;
+     background-color: hsl(185, 51%, 30%);
+}
+
+#wrong{
+    display: none;
+}
+
+@media screen and (max-width:804px) {
+
+.widget {
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(20%, #3cc0fe), to(#0066ff));
+    background: linear-gradient(to bottom right, #3cc0fe 20%, #0066ff);
+    width: 779px;
+    height: 400px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 60px 80px -20px rgb(39 165 253 / 40%);
+    box-shadow: 0px 60px 80px -20px rgb(39 165 253 / 40%);
+    position: relative;
+    overflow: hidden;
+    top: -65px;
+}
+.pictoFrame {
+    position: absolute;
+    background: #34373e;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 50px 60px -20px #0066ff;
+    box-shadow: 0px 50px 60px -20px #0066ff;
+    height: 279px;
+    width: 283px;
+    right: -90px;
+    top: 25px;
+    /* flex-shrink: 0.6; */
+    /* flex-shrink: 132.6; */
+}           
+.pictoCloudBig {
+    position: absolute;
+    border-radius: 50%;
+    background: #aacbe6;
+    
+    box-shadow: 20px 20px 80px -20px #aacbe6;
+    height: 218.4px;
+    width: 218.4px;
+    top: 61px;
+    right: -49px;
+}
+.pictoCloudSmall {
+    position: absolute;
+    border-radius: 50%;
+    background: #d2e9fa;
+    height: 152.88px;
+    width: 152.88px;
+    top: 95px;
+    right: -9px;
+}
+.pictoCloudFill {
+    position: absolute;
+    background: #aacbe6;
+
+    box-shadow: 0px 20px 80px -20px #aacbe6;
+    height: 94.016px;
+    width: 99.016px;
+    top: 185px;
+    right: 58px;
+}
+.details {
+    font-family: Roboto, sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: -4px;
+}
+.summary {
+    color: #d2e9fa;
+    font-size: 2em;
+    font-weight: 300;
+    width: 260px;
+    margin-top: -16px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #9cd0ff;
+    margin-left: -14px;
+}
+
+.iconCloudBig {
+    position: absolute;
+    border-radius: 50%;
+    background: #9cd0ff;
+    height: 21px;
+    width: 22px;
+    top: 217px;
+    left: 9px;
+}
+.iconCloudSmall {
+    position: absolute;
+    border-radius: 50%;
+    height: 13.4px;
+    width: 13.4px;
+    background: #d2e9fa;
+    top: 220px;
+    left: 13px;
+}
+.iconCloudFill {
+    position: absolute;
+    height: 18.38px;
+    width: 16.38px;
+    background: #9cd0ff;
+    top: 220px;
+    left: 10px;
+}
+
+
+}
+
+    </style>
+  </head>
+  <body>
+      
+      <h3 >Weather App</h3>
+    
+    <form >
+      <div id="wrong" style=" background-color: red; color: #fbfdff;   font-weight: bold; " >Sorry, City not found</div>
+      <input type="text" id= "city" placeholder="City's Name" >
+      
+      <input type="button"id="submit" value="search" >
+   
+  </form>
+  <br>
+
+<div class="container">
+    
+    <div class="widget">
+      <div class="details" >
+          
+        <div class="temperature" id="temp">1</div>
+        <div class="summary"  >
+          <p class="summaryText" id="desc" >1</p>
+        </div>
+        <div class="precipitation" id="humidity">1</div>
+        <div class="wind" id="pressure">1</div>
+      </div>
+      <div class="pictoBackdrop"></div>
+      <div class="pictoFrame"></div>
+      <div class="pictoCloudBig"></div>
+      <div class="pictoCloudFill"></div>
+      <div class="pictoCloudSmall"></div>
+      <div class="iconCloudBig"></div>
+      <div class="iconCloudFill"></div>
+      <div class="iconCloudSmall"></div>
+    </div>
+  </div>
+  
+
+    <script>
+      
+    document.addEventListener('DOMContentLoaded', function(){
+        
+       document.querySelector('#submit').onclick= function(){
+       
+        // let x = document.getElementsByClassName('container').style.display = "block";
+        let weather = document.getElementById('city').value;
+       
+            fetch (`http://api.openweathermap.org/data/2.5/weather?q=${weather}&units=metric&appid=77c0497ead6a5385cae9c883aba04c60`)
+            .then(response =>  response.json())
+            .then(data =>{
+              
+              console.log(data)
+              console.log(weather)
+              console.log(data.clouds)
+            //   console.log(data.weather[0].description)
+            //   console.log(description)
+            //    let city = data[weather]
+            //     // let temperature = data.main.temp
+            //     let Cityname = data[weather];
+            //     document.getElementById('results').innerHTML = data.name;
+                if (city!==  undefined && data.clouds !== undefined ){
+                
+                    // document.getElementById('place').innerHTML =  `City: ${weather}`
+                    document.getElementById('temp').innerHTML = `${Math.round(data.main.temp)}`
+                    document.getElementById('desc').innerHTML = `${data.weather[0].description}`         
+                    document.getElementById('humidity').innerText = ` Humidity: ${data.main.humidity}`
+                    document.getElementById('pressure').innerHTML = ` wind: ${data.wind.speed}mph`
+                  
+                }if  (data.cod === "404"){
+                    // document.querySelector('#results').innerHTML = `INVALID CITY`
+                    // document.getElementById('place').innerHTML = `City :  ${weather}`
+                //   document.getElementById('place').innerHTML= "Sorry, City not found";
+
+
+                    document.getElementById("wrong").style.display = "block";
+
+                    // document.getElementById('temp').style.display = "none";
+                    // document.getElementById('desc').style.display = "none";
+                    // document.getElementById('humidity').style.display = "none";
+                    // document.getElementById('pressure').style.display = "none";
+                   
+                    setTimeout(location.reload.bind(location), 2000);
+
+}})
+return false; 
+    }})
+       
+    </script>
+   
+</body>
+</html>
