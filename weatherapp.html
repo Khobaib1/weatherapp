@@ -265,7 +265,7 @@ h3{
     box-shadow: 0px 60px 80px -20px rgb(39 165 253 / 40%);
     position: relative;
     overflow: hidden;
-    top: -65px;
+    top: -28px;
 }
 .pictoFrame {
     position: absolute;
@@ -275,7 +275,7 @@ h3{
     box-shadow: 0px 50px 60px -20px #0066ff;
     height: 279px;
     width: 283px;
-    right: -90px;
+    right: -114px;
     top: 25px;
     /* flex-shrink: 0.6; */
     /* flex-shrink: 132.6; */
@@ -289,7 +289,7 @@ h3{
     height: 218.4px;
     width: 218.4px;
     top: 61px;
-    right: -49px;
+    right: -59px;
 }
 .pictoCloudSmall {
     position: absolute;
@@ -411,7 +411,7 @@ h3{
         // let x = document.getElementsByClassName('container').style.display = "block";
         let weather = document.getElementById('city').value;
        
-            fetch (`http://api.openweathermap.org/data/2.5/weather?q=${weather}&units=metric&appid=ENTER_API_KEY`)
+            fetch (`http://api.openweathermap.org/data/2.5/weather?q=${weather}&units=metric&appid=77c0497ead6a5385cae9c883aba04c60`)
             .then(response =>  response.json())
             .then(data =>{
               
